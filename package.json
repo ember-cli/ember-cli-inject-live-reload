@@ -9,6 +9,9 @@
   "keywords": [
     "ember-addon"
   ],
+  "ember-addon": {
+    "before": "serve-files-middleware"
+  },
   "author": "Robert Jackson",
   "license": "MIT",
   "dependencies": {
