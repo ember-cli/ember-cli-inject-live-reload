@@ -13,5 +13,14 @@
   "license": "MIT",
   "dependencies": {
     "connect-livereload": "~0.4.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rwjblue/ember-cli-inject-live-reload.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rwjblue/ember-cli-inject-live-reload/issues"
+  },
+  "homepage": "https://github.com/rwjblue/ember-cli-inject-live-reload"
 }
