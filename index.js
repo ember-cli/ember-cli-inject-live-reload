@@ -11,7 +11,7 @@ module.exports = {
       var livereloadMiddleware = require('connect-livereload');
 
       app.use(livereloadMiddleware({
-        port: options.loveReloadPort
+        port: options.liveReloadPort
       }));
     }
   }
