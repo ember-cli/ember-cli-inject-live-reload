@@ -11,17 +11,7 @@ module.exports = {
       var livereloadMiddleware = require('connect-livereload');
 
       app.use(livereloadMiddleware({
-        ignore: [
-          /\.js(?:\?.*)?$/,
-          /\.css(?:\?.*)$/,
-          /\.svg(?:\?.*)$/,
-          /\.ico(?:\?.*)$/,
-          /\.woff(?:\?.*)$/,
-          /\.png(?:\?.*)$/,
-          /\.jpg(?:\?.*)$/,
-          /\.jpeg(?:\?.*)$/,
-          /\.ttf(?:\?.*)$/
-        ],
+        include: [/index\.html$/],
         port: options.liveReloadPort
       }));
     }
