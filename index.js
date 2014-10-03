@@ -31,6 +31,9 @@ module.exports = {
   shouldUseMiddleware: function() {
     var version = this.project.emberCLIVersion();
     var portions = version.split('.');
+    portions = portions.map(function(portion) {
+      return Number(portion.split('-')[0]);
+    });
 
     if (portions[0] > 0) {
       return false;
