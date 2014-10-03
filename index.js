@@ -3,17 +3,43 @@
 module.exports = {
   name: 'live-reload-middleware',
 
-  serverMiddleware: function(options) {
-    var app = options.app;
-    options = options.options;
+  contentFor: function(type) {
+    var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
 
-    if (options.liveReload === true) {
+    if (liveReloadPort && type === 'head') {
+      return '<script src="http://localhost:35729/livereload.js?snipver=1" type="text/javascript"></script>';
+    }
+  },
+
+  serverMiddleware: function(config) {
+    var app = config.app;
+    var options = config.options;
+
+    if (options.liveReload !== true) { return; }
+
+    if (this.shouldUseMiddleware()) {
       var livereloadMiddleware = require('connect-livereload');
 
       app.use(livereloadMiddleware({
-        include: [/index\.html$/],
         port: options.liveReloadPort
       }));
+    } else {
+      process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT = options.liveReloadPort;
+    }
+  },
+
+  shouldUseMiddleware: function() {
+    var version = this.project.emberCLIVersion();
+    var portions = version.split('.');
+
+    if (portions[0] > 0) {
+      return false;
+    } else if (portions[1] > 0) {
+      return false;
+    } else if (portions[2] > 46) {
+      return false;
+    } else {
+      return true;
     }
   }
 };
