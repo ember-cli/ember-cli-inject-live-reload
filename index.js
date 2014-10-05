@@ -7,9 +7,9 @@ module.exports = {
     var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
 
     if (liveReloadPort && type === 'head') {
-      var liveReloadHost = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_HOST || '//localhost';
+      var liveReloadHost = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_HOST || 'localhost';
 
-      return '<script src="'+ liveReloadHost +':' + liveReloadPort + '/livereload.js?snipver=1" type="text/javascript"></script>';
+      return '<script src="//'+ liveReloadHost +':' + liveReloadPort + '/livereload.js?snipver=1" type="text/javascript"></script>';
     }
   },
 
