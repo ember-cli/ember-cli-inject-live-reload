@@ -15,7 +15,7 @@
   "author": "Robert Jackson",
   "license": "MIT",
   "dependencies": {
-    "connect-livereload": "~0.4.0"
+    "connect-livereload": "^0.4.0"
   },
   "devDependencies": {},
   "repository": {
