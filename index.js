@@ -5,9 +5,14 @@ module.exports = {
 
   contentFor: function(type) {
     var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
-
+    var liveReloadHost = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_HOST;
+  
     if (liveReloadPort && type === 'head') {
-      return '<script src="//localhost:' + liveReloadPort + '/livereload.js?snipver=1" type="text/javascript"></script>';
+      if (liveReloadHost) {
+        return '<script src="//'+ liveReloadHost +':' + liveReloadPort + '/livereload.js?snipver=1" type="text/javascript"></script>';
+      } else {
+        return '<script type="text/javascript">(function(d,l,p,s){s=d.createElement("script");s.type="text/javascript";s.async=true;s.src=l.protocol+"//"+l.hostname+":"+p+"/livereload.js?snipver=1";d.getElementsByTagName("head")[0].appendChild(s)})(document,document.location,' + liveReloadPort  + ')</script>';
+      }
     }
   },
 
