@@ -7,42 +7,32 @@ module.exports = {
     var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
 
     if (liveReloadPort && type === 'head') {
-      return '<script src="//localhost:' + liveReloadPort + '/livereload.js?snipver=1" type="text/javascript"></script>';
+      return '<script src="/ember-cli-live-reload.js" type="text/javascript"></script>';
     }
   },
 
+  dynamicScript: function(request) {
+    var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
+
+    return "var src = (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + liveReloadPort + "/livereload.js?snipver=1';\n " +
+           "var script    = document.createElement('script');\n " +
+           "script.type   = 'text/javascript';\n " +
+           "script.src    = src;\n " +
+           "document.getElementsByTagName('head')[0].appendChild(script);"
+  },
+
   serverMiddleware: function(config) {
+    var self = this;
     var app = config.app;
     var options = config.options;
 
     if (options.liveReload !== true) { return; }
 
-    if (this.shouldUseMiddleware()) {
-      var livereloadMiddleware = require('connect-livereload');
+    process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT = options.liveReloadPort;
 
-      app.use(livereloadMiddleware({
-        port: options.liveReloadPort
-      }));
-    } else {
-      process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT = options.liveReloadPort;
-    }
-  },
-
-  shouldUseMiddleware: function() {
-    var version = this.project.emberCLIVersion();
-    var portions = version.split('.');
-    portions = portions.map(function(portion) {
-      return Number(portion.split('-')[0]);
+    app.use('/ember-cli-live-reload.js', function(request, response, next) {
+      response.contentType('text/javascript');
+      response.send(self.dynamicScript());
     });
-
-    if (portions[0] > 0) {
-      return false;
-    } else if (portions[1] > 0) {
-      return false;
-    } else if (portions[2] > 46) {
-      return false;
-    } else {
-      return true;
-    }
   }
 };
