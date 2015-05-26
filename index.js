@@ -14,9 +14,16 @@ module.exports = {
 
   dynamicScript: function(request) {
     var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
+    var forceLocalhost = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_FORCE_LOCALHOST;
+
+    var dynamicHost = "location.hostname || 'localhost'";
+
+    if (forceLocalhost) {
+      dynamicHost = "'localhost'";
+    }
 
     return "(function() {\n " +
-           "var src = (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + liveReloadPort + "/livereload.js?snipver=1';\n " +
+           "var src = (location.protocol || 'http:') + '//' + (" + dynamicHost + ") + ':" + liveReloadPort + "/livereload.js?snipver=1';\n " +
            "var script    = document.createElement('script');\n " +
            "script.type   = 'text/javascript';\n " +
            "script.src    = src;\n " +
