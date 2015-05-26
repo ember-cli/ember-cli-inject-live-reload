@@ -35,6 +35,9 @@ module.exports = {
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL = options.baseURL; // default is '/'
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_FORCE_LOCALHOST = options.liveReloadForceLocalhost;
 
+    if (options.liveReloadForceLocalhost) {
+      process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL = 'http://localhost:' + options.port + options.baseURL;
+    }
 
     app.use(options.baseURL + 'ember-cli-live-reload.js', function(request, response, next) {
       response.contentType('text/javascript');
