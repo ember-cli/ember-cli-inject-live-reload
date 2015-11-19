@@ -32,9 +32,7 @@ module.exports = {
     if (options.liveReload !== true) { return; }
 
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT = options.liveReloadPort;
-    if (process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL === undefined) {
-      process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL = options.baseURL; // default is '/'  
-    }
+    process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL = options.liveReloadBaseUrl || options.baseURL;
 
     app.use(options.baseURL + 'ember-cli-live-reload.js', function(request, response, next) {
       response.contentType('text/javascript');
