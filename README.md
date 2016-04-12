@@ -22,3 +22,30 @@ The following options are supported via command line arguments or the `.ember-cl
 | `liveReloadPort` | Specifies the port that `ember-cli-live-reload.js` and `livereload.js` are loaded from  |
 | `liveReloadHost` | The host that `ember-cli-live-reload.js` will be loaded from |
 
+The following options are supported via the `.ember-cli` file:
+
+|Option|Purpose|
+|------|-------|
+| `liveReloadJsUrl` | The absolute URL used to load `livereload.js`. If specified, this overrides the `liveReloadPort` option.  |
+| `liveReloadOptions` | JavaScript object for LiveReload options. LiveReload supports a number of [options](https://github.com/livereload/livereload-js#options) for configuring websocket communication, including `https`, `host`, `port`, and others. See advanced example below. |
+
+## Advanced Example Configuration
+
+**NOTE:** Most apps will be fine with _no_ special configuration. Only use this sort of configuration if you have reason to override the default LiveReload websocket behavior. A use case for this is serving Ember CLI apps in development via a reverse proxy such as nginx.
+
+##### .ember-cli
+
+```javascript
+{
+  "liveReloadPort": 37531,
+
+  // This `liveReloadOptions` property becomes `window.LiveReloadOptions`
+  "liveReloadOptions": {
+    "port": 37631,
+    "https": true,
+    "host": "your-hostname.dev"
+  },
+
+  "liveReloadJsUrl": "https://your-hostname.dev/livereload.js"
+}
+```
