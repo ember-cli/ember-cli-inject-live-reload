@@ -35,7 +35,7 @@ module.exports = {
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT = options.liveReloadPort;
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL = baseURL;
 
-    app.use(options.baseURL + 'ember-cli-live-reload.js', function(request, response, next) {
+    app.use(baseURL + 'ember-cli-live-reload.js', function(request, response, next) {
       response.contentType('text/javascript');
       response.send(self.dynamicScript());
     });
