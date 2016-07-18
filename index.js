@@ -28,7 +28,8 @@ module.exports = {
     var self = this;
     var app = config.app;
     var options = config.options;
-    var baseURL = options.liveReloadBaseUrl || options.baseURL;
+    // maintaining `baseURL` for backwards compatibility. See: http://emberjs.com/blog/2016/04/28/baseURL.html
+    var baseURL = options.liveReloadBaseUrl || options.rootURL || options.baseURL;
 
     if (options.liveReload !== true) { return; }
 
