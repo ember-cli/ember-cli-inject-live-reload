@@ -12,11 +12,16 @@ module.exports = {
     }
   },
 
-  dynamicScript: function(request) {
-    var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
+  dynamicScript: function(options) {
+    var liveReloadOptions = options.liveReloadOptions;
+    if (liveReloadOptions.snipver === undefined) {
+      liveReloadOptions.snipver = 1;
+    }
 
     return "(function() {\n " +
-           "var src = (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + liveReloadPort + "/livereload.js?snipver=1';\n " +
+           "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " +
+           "var srcUrl = " + (options.liveReloadJsUrl ? "'" + options.liveReloadJsUrl + "'" : "null") + ";\n " +
+           "var src = srcUrl || ((location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + options.liveReloadPort + "/livereload.js');\n " +
            "var script    = document.createElement('script');\n " +
            "script.type   = 'text/javascript';\n " +
            "script.src    = src;\n " +
@@ -38,7 +43,7 @@ module.exports = {
 
     app.use(baseURL + 'ember-cli-live-reload.js', function(request, response, next) {
       response.contentType('text/javascript');
-      response.send(self.dynamicScript());
+      response.send(self.dynamicScript(options));
     });
   }
 };
