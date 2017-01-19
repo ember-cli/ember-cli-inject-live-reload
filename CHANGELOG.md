@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.6.0](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.6.0) (2017-01-19)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.5.0...v1.6.0)
+
+**Merged pull requests:**
+
+- Update this addon to run before the new serve-file middleware [\#39](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/39) ([kratiahuja](https://github.com/kratiahuja))
+
 ## [v1.5.0](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.5.0) (2017-01-19)
 [Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.4.1...v1.5.0)
 
