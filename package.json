@@ -12,7 +12,7 @@
   "ember-addon": {
     "before": [
       "serve-files-middleware",
-      "ember-cli:broccoli:watcher"
+      "broccoli-watcher"
     ]
   },
   "author": "Robert Jackson",
