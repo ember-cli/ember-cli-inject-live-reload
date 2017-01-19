@@ -10,7 +10,7 @@
     "ember-addon"
   ],
   "ember-addon": {
-    "before": "serve-files-middleware"
+    "before": ["serve-files-middleware", "ember-cli:broccoli:watcher"]
   },
   "author": "Robert Jackson",
   "license": "MIT",
