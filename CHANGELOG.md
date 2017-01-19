@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.6.1](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.6.1) (2017-01-19)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.6.0...v1.6.1)
+
+**Closed issues:**
+
+- Live Reload not working when not using Ember CLI server to serve assets [\#13](https://github.com/ember-cli/ember-cli-inject-live-reload/issues/13)
+
+**Merged pull requests:**
+
+- Change the name of middleware to broccoli-watcher [\#41](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/41) ([kratiahuja](https://github.com/kratiahuja))
+
 ## [v1.6.0](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.6.0) (2017-01-19)
 [Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.5.0...v1.6.0)
 
