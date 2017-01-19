@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-inject-live-reload",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Plugin for ember-cli that injects live-reload script into HTML content.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,10 @@
     "ember-addon"
   ],
   "ember-addon": {
-    "before": ["serve-files-middleware", "ember-cli:broccoli:watcher"]
+    "before": [
+      "serve-files-middleware",
+      "ember-cli:broccoli:watcher"
+    ]
   },
   "author": "Robert Jackson",
   "license": "MIT",
