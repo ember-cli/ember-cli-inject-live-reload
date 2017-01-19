@@ -14,12 +14,12 @@ module.exports = {
 
   dynamicScript: function(options) {
     var liveReloadOptions = options.liveReloadOptions;
-    if (liveReloadOptions.snipver === undefined) {
+    if (liveReloadOptions && liveReloadOptions.snipver === undefined) {
       liveReloadOptions.snipver = 1;
     }
 
     return "(function() {\n " +
-           "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " +
+           (liveReloadOptions ? "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " : '') +
            "var srcUrl = " + (options.liveReloadJsUrl ? "'" + options.liveReloadJsUrl + "'" : "null") + ";\n " +
            "var src = srcUrl || ((location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + options.liveReloadPort + "/livereload.js');\n " +
            "var script    = document.createElement('script');\n " +
