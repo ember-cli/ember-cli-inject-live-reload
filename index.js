@@ -13,6 +13,12 @@ module.exports = {
   },
 
   dynamicScript: function(options) {
+    var liveReloadPrefix = options.liveReloadPrefix || '_lr';
+
+    if (liveReloadPrefix.length && (liveReloadPrefix[liveReloadPrefix.length - 1] !== '/')) {
+      liveReloadPrefix += '/';
+    }
+
     var liveReloadOptions = options.liveReloadOptions;
     if (liveReloadOptions && liveReloadOptions.snipver === undefined) {
       liveReloadOptions.snipver = 1;
@@ -21,7 +27,8 @@ module.exports = {
     return "(function() {\n " +
            (liveReloadOptions ? "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " : '') +
            "var srcUrl = " + (options.liveReloadJsUrl ? "'" + options.liveReloadJsUrl + "'" : "null") + ";\n " +
-           "var src = srcUrl || ((location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + options.liveReloadPort + "/livereload.js');\n " +
+           "var hostname = location.hostname || 'localhost';" +
+           "var src = srcUrl || ((location.protocol || 'http:') + '//' + hostname + ':" + options.liveReloadPort + "/" + liveReloadPrefix + "livereload.js?path=" + liveReloadPrefix + "livereload&host=' + hostname + '&port=" + options.liveReloadPort + "');\n " +
            "var script    = document.createElement('script');\n " +
            "script.type   = 'text/javascript';\n " +
            "script.src    = src;\n " +
