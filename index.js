@@ -6,9 +6,11 @@ module.exports = {
   contentFor: function(type) {
     var liveReloadPort = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT;
     var baseURL = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL;
+    var cspNonce = process.env.EMBER_CLI_INJECT_LIVE_RELOAD_CSP_NONCE;
 
     if (liveReloadPort && type === 'head') {
-      return '<script src="' + baseURL + 'ember-cli-live-reload.js" type="text/javascript"></script>';
+      var nonce = cspNonce ? ('nonce="' + cspNonce + '" ') : '';
+      return '<script ' + nonce + 'src="' + baseURL + 'ember-cli-live-reload.js" type="text/javascript"></script>';
     }
   },
 
@@ -40,6 +42,7 @@ module.exports = {
 
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_PORT = options.liveReloadPort;
     process.env.EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL = baseURL;
+    process.env.EMBER_CLI_INJECT_LIVE_RELOAD_CSP_NONCE = options.cspNonce;
 
     var baseURLWithoutHost = baseURL.replace(/^https?:\/\/[^\/]+/, '');
     app.use(baseURLWithoutHost + 'ember-cli-live-reload.js', function(request, response, next) {
