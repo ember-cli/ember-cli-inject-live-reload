@@ -28,6 +28,7 @@ The following options are supported via the `.ember-cli` file:
 |------|-------|
 | `liveReloadJsUrl` | The absolute URL used to load `livereload.js`. If specified, this overrides the `liveReloadPort` option.  |
 | `liveReloadOptions` | JavaScript object for LiveReload options. LiveReload supports a number of [options](https://github.com/livereload/livereload-js#options) for configuring websocket communication, including `https`, `host`, `port`, and others. See advanced example below. |
+| `cspNonce` | optional string to be added as `nonce` attribute in the `ember-cli-live-reload.js`'s script tag, for Content Security Policy purposes. See [ember-cli-content-security-policy](https://github.com/rwjblue/ember-cli-content-security-policy) |
 
 ## Advanced Example Configuration
 
@@ -46,6 +47,8 @@ The following options are supported via the `.ember-cli` file:
     "host": "your-hostname.dev"
   },
 
-  "liveReloadJsUrl": "https://your-hostname.dev/livereload.js"
+  "liveReloadJsUrl": "https://your-hostname.dev/livereload.js",
+
+  "cspNonce": "mydevelnonce"
 }
 ```
