@@ -17,7 +17,9 @@
   },
   "author": "Robert Jackson",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "clean-base-url": "^1.0.0"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",

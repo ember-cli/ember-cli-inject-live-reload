@@ -1,22 +1,6 @@
 'use strict';
 
-function buildLiveReloadPath(prefix) {
-  prefix = prefix !== undefined ? prefix : '/';
-
-  var rootUrl = prefix;
-
-  // Add trailing slash
-  if (prefix[prefix.length - 1] !== '/') {
-    rootUrl = rootUrl + '/';
-  }
-
-  // Add leading slash
-  if (prefix[0] !== '/') {
-    rootUrl = '/' + rootUrl;
-  }
-
-  return rootUrl;
-}
+var buildLiveReloadPath = require('clean-base-url');
 
 module.exports = {
   name: 'live-reload-middleware',
