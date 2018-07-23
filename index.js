@@ -1,5 +1,23 @@
 'use strict';
 
+function buildLiveReloadPath(prefix) {
+  prefix = prefix !== undefined ? prefix : '/';
+
+  var rootUrl = prefix;
+
+  // Add trailing slash
+  if (prefix[prefix.length - 1] !== '/') {
+    rootUrl = rootUrl + '/';
+  }
+
+  // Add leading slash
+  if (prefix[0] !== '/') {
+    rootUrl = '/' + rootUrl;
+  }
+
+  return rootUrl;
+}
+
 module.exports = {
   name: 'live-reload-middleware',
 
@@ -18,10 +36,11 @@ module.exports = {
       liveReloadOptions.snipver = 1;
     }
 
+    var liveReloadPath = buildLiveReloadPath(options.liveReloadPrefix);
     return "(function() {\n " +
            (liveReloadOptions ? "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " : '') +
            "var srcUrl = " + (options.liveReloadJsUrl ? "'" + options.liveReloadJsUrl + "'" : "null") + ";\n " +
-           "var src = srcUrl || ((location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + options.liveReloadPort + "/livereload.js');\n " +
+           "var src = srcUrl || ((location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + options.liveReloadPort + liveReloadPath +"livereload.js');\n " +
            "var script    = document.createElement('script');\n " +
            "script.type   = 'text/javascript';\n " +
            "script.src    = src;\n " +
