@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.8.1](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.1) (2018-07-24)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.8.0...v1.8.1)
+
+**Merged pull requests:**
+
+- fix undefined error when options.liveReloadPrefix is undefined [\#50](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/50) ([SparshithNR](https://github.com/SparshithNR))
+
 ## [v1.8.0](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.0) (2018-07-24)
 [Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.7.0...v1.8.0)
 
