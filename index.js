@@ -20,7 +20,7 @@ module.exports = {
       liveReloadOptions.snipver = 1;
     }
 
-    var liveReloadPath = buildLiveReloadPath(options.liveReloadPrefix);
+    var liveReloadPath = buildLiveReloadPath(options.liveReloadPrefix) || '/';
     return "(function() {\n " +
            (liveReloadOptions ? "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " : '') +
            "var srcUrl = " + (options.liveReloadJsUrl ? "'" + options.liveReloadJsUrl + "'" : "null") + ";\n " +
