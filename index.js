@@ -24,7 +24,8 @@ module.exports = {
     return "(function() {\n " +
            (liveReloadOptions ? "window.LiveReloadOptions = " + JSON.stringify(liveReloadOptions) + ";\n " : '') +
            "var srcUrl = " + (options.liveReloadJsUrl ? "'" + options.liveReloadJsUrl + "'" : "null") + ";\n " +
-           "var src = srcUrl || ((location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':" + options.liveReloadPort + liveReloadPath +"livereload.js');\n " +
+           "var host= location.hostname || 'localhost';\n " +
+           "var src = srcUrl || ((location.protocol || 'http:') + '//' + host + ':" + options.liveReloadPort + liveReloadPath +"livereload.js?host='+host+'&port='+"+ options.liveReloadPort +");\n " +
            "var script    = document.createElement('script');\n " +
            "script.type   = 'text/javascript';\n " +
            "script.src    = src;\n " +
