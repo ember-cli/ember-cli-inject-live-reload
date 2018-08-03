@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.8.2](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.2) (2018-08-03)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.8.1...v1.8.2)
+
+**Merged pull requests:**
+
+- Passing port and host to livereload.js file as regex fails to parse URL with prefix [\#51](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/51) ([SparshithNR](https://github.com/SparshithNR))
+
 ## [v1.8.1](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.1) (2018-07-24)
 [Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.8.0...v1.8.1)
 
