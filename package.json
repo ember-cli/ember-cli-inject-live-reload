@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-inject-live-reload",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "description": "Plugin for ember-cli that injects live-reload script into HTML content.",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "qunit": "^2.6.1",
-    "express":"^4.16.3"
+    "express": "^4.16.3"
   },
   "repository": {
     "type": "git",
