@@ -4,7 +4,7 @@
   "description": "Plugin for ember-cli that injects live-reload script into HTML content.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "qunit tests/**/*-test.js"
   },
   "keywords": [
     "ember-addon"
@@ -20,7 +20,10 @@
   "dependencies": {
     "clean-base-url": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "qunit": "^2.6.1",
+    "express":"^4.16.3"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/rwjblue/ember-cli-inject-live-reload.git"
