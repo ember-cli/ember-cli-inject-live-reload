@@ -37,8 +37,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -55,8 +56,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = 35729;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '(location.protocol || 'http:') + '//' + host + ':' + 35729';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -73,8 +75,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '&path=test/livereload';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/test/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/test/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -91,8 +94,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -110,8 +114,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -156,8 +161,9 @@ describe('serverMiddleware', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
