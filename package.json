@@ -18,7 +18,8 @@
   "author": "Robert Jackson",
   "license": "MIT",
   "dependencies": {
-    "clean-base-url": "^1.0.0"
+    "clean-base-url": "^1.0.0",
+    "ember-cli-version-checker": "^2.1.2"
   },
   "devDependencies": {
     "qunit": "^2.6.1",
