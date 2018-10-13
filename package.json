@@ -2,35 +2,46 @@
   "name": "ember-cli-inject-live-reload",
   "version": "1.9.0",
   "description": "Plugin for ember-cli that injects live-reload script into HTML content.",
-  "main": "index.js",
-  "scripts": {
-    "test": "qunit tests/**/*-test.js"
-  },
   "keywords": [
     "ember-addon"
   ],
-  "ember-addon": {
-    "before": [
-      "serve-files-middleware",
-      "broccoli-watcher"
-    ]
-  },
-  "author": "Robert Jackson",
-  "license": "MIT",
-  "dependencies": {
-    "clean-base-url": "^1.0.0",
-    "ember-cli-version-checker": "^2.1.2"
-  },
-  "devDependencies": {
-    "qunit": "^2.6.1",
-    "express": "^4.16.3"
+  "homepage": "https://github.com/rwjblue/ember-cli-inject-live-reload",
+  "bugs": {
+    "url": "https://github.com/rwjblue/ember-cli-inject-live-reload/issues"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/rwjblue/ember-cli-inject-live-reload.git"
   },
-  "bugs": {
-    "url": "https://github.com/rwjblue/ember-cli-inject-live-reload/issues"
+  "license": "MIT",
+  "author": "Robert Jackson",
+  "main": "index.js",
+  "scripts": {
+    "changelog": "lerna-changelog"
   },
-  "homepage": "https://github.com/rwjblue/ember-cli-inject-live-reload"
+  "dependencies": {
+    "clean-base-url": "^1.0.0",
+    "ember-cli-version-checker": "^2.1.2"
+  },
+  "devDependencies": {
+    "express": "^4.16.3",
+    "lerna-changelog": "0.8.0",
+    "qunit": "^2.6.1"
+  },
+  "changelog": {
+    "repo": "ember-cli/ember-cli-inject-live-reload",
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":memo: Documentation",
+      "internal": ":house: Internal"
+    }
+  },
+  "ember-addon": {
+    "before": [
+      "serve-files-middleware",
+      "broccoli-watcher"
+    ]
+  }
 }
