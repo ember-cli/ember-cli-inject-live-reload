@@ -46,7 +46,10 @@ module.exports = {
 }());`;
   },
 
-  serverMiddleware: function({ options, app }) {
+  serverMiddleware: function(config) {
+    let options = config.options;
+    let app = config.app;
+
     let self = this;
     // maintaining `baseURL` for backwards compatibility. See: http://emberjs.com/blog/2016/04/28/baseURL.html
     let baseURL = options.liveReloadBaseUrl || options.rootURL || options.baseURL;
