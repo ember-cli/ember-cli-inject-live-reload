@@ -25,7 +25,8 @@ describe('dynamicScript returns right script when', hooks => {
   hooks.beforeEach(() => {
     options = {
       port: 4200,
-      liveReloadPort: 4200
+      liveReloadPort: 4200,
+      isLatestEmber: true
     };
   });
 
@@ -37,8 +38,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -55,8 +57,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = 35729;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '(location.protocol || 'http:') + '//' + host + ':' + 35729';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -73,8 +76,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '&path=test/livereload';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/test/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/test/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -91,8 +95,9 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -110,8 +115,28 @@ describe('dynamicScript returns right script when', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
+  var script    = document.createElement('script');
+  script.type   = 'text/javascript';
+  script.src    = src;
+  document.getElementsByTagName('head')[0].appendChild(script);
+}());`)
+  });
+
+  it('provide compatiblity for older ember version', assert => {
+    options.isLatestEmber = false;
+    let script = InjectLiveReload.dynamicScript(options);
+    assert.equal(script, `(function() {
+  var srcUrl = null;
+  var host= location.hostname || 'localhost';
+  var liveReloadPort = undefined;
+  var defaultPort = location.protocol === 'https:' ? 443 : 80;
+  var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
+  var prefixURL = '';
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
@@ -130,7 +155,8 @@ describe('serverMiddleware', hooks => {
         liveReloadPort: 4200,
         rootURL: '/test/',
         liveReload: true,
-        port: 4200
+        port: 4200,
+        isLatestEmber:false
       }
     }
   });
@@ -156,8 +182,9 @@ describe('serverMiddleware', hooks => {
   var liveReloadPort = undefined;
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
+  var path = '';
   var prefixURL = '';
-  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host;
+  var src = srcUrl || prefixURL + '/livereload.js?port=' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
   script.src    = src;
