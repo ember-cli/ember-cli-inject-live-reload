@@ -29,6 +29,9 @@
     "lerna-changelog": "^0.7.0",
     "qunit": "~2.6.1"
   },
+  "engines": {
+    "node": ">= 4"
+  },
   "changelog": {
     "repo": "ember-cli/ember-cli-inject-live-reload",
     "labels": {
