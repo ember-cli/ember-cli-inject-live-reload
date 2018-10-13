@@ -17,7 +17,8 @@
   "author": "Robert Jackson",
   "main": "index.js",
   "scripts": {
-    "changelog": "lerna-changelog"
+    "changelog": "lerna-changelog",
+    "test": "qunit tests"
   },
   "dependencies": {
     "clean-base-url": "^1.0.0",
