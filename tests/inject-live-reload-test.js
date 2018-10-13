@@ -1,3 +1,5 @@
+'use strict';
+
 const describe = QUnit.module;
 const it = QUnit.test;
 const express = require('express');
