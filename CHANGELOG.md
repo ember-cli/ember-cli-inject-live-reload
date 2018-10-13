@@ -1,5 +1,21 @@
 # Change Log
 
+## v1.10.1 (2018-10-13)
+
+#### :rocket: Enhancement
+* [#59](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/59) package.json: Declare Node.js version requirements. ([@Turbo87](https://github.com/Turbo87))
+
+#### :bug: Bug Fix
+* [#58](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/58) Run test suite on TravisCI and fix Node 4 compatibility. ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#57](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/57) Add linting via ESLint. ([@rwjblue](https://github.com/rwjblue))
+
+#### Committers: 2
+- Robert Jackson ([rwjblue](https://github.com/rwjblue))
+- Tobias Bieniek ([Turbo87](https://github.com/Turbo87))
+
+
 ## v1.10.0 (2018-10-13)
 
 #### :bug: Bug Fix
@@ -10,7 +26,8 @@
 
 #### Committers: 1
 - SparshithNRai ([@SparshithNR](https://github.com/SparshithNR))
--
+
+
 ## [v1.8.2](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.2) (2018-08-03)
 [Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.8.1...v1.8.2)
 
