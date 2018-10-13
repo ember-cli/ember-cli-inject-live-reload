@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-inject-live-reload",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Plugin for ember-cli that injects live-reload script into HTML content.",
   "keywords": [
     "ember-addon"
