@@ -37,7 +37,7 @@ module.exports = {
   var defaultPort = location.protocol === 'https:' ? 443 : 80;
   var port = liveReloadPort || location.port || defaultPort;
   var path = '${path}';
-  var prefixURL = '${liveReloadPort ? "(location.protocol || 'http:') + '//' + host + ':' + " + liveReloadPort : ''}';
+  var prefixURL = ${liveReloadPort ? "(location.protocol || 'http:') + '//' + host + ':' + " + liveReloadPort : ''};
   var src = srcUrl || prefixURL + '${liveReloadPath + 'livereload.js?port='}' + port + '&host=' + host + path;
   var script    = document.createElement('script');
   script.type   = 'text/javascript';
