@@ -1,5 +1,13 @@
 # Change Log
 
+## v2.0.0 (2018-10-15)
+
+#### :boom: Breaking Change
+* [#60](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/60) Drop support for Node 4 ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v1.10.1 (2018-10-13)
 
 #### :rocket: Enhancement
