@@ -36,7 +36,7 @@
     "qunit": "~2.6.1"
   },
   "engines": {
-    "node": ">= 4"
+    "node": "6.* || 8.* || >= 10.*"
   },
   "changelog": {
     "repo": "ember-cli/ember-cli-inject-live-reload",
