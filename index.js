@@ -56,7 +56,7 @@ module.exports = {
     if (this.parent) {
       let checker = new VersionChecker(this.parent);
       let depedency = checker.for('ember-cli');
-      options.isLatestEmber = depedency.gt('3.5.0-beta.2');
+      options.isLatestEmber = depedency.gt('3.5.0');
     }
     if (options.liveReload !== true) { return; }
 
