@@ -1,5 +1,15 @@
 # Change Log
 
+## v1.10.2 (2018-10-15)
+
+#### :bug: Bug Fix
+* [#66](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/66) Update minimum ember-cli version for scoped path ([@rwjblue](https://github.com/rwjblue))
+* [#65](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/65) fix: syntax error in `dynamicScript` ([@buschtoens](https://github.com/buschtoens))
+
+#### Committers: 2
+- Jan Buschtöns ([@buschtoens](https://github.com/buschtoens))
+- Robert Jackson ([@rwjblue](https://github.com/rwjblue))
+
 ## v1.10.1 (2018-10-13)
 
 #### :rocket: Enhancement
