@@ -95,6 +95,15 @@ describe('dynamicScript returns right script when', hooks => {
     assert.strictEqual(actual, 'http://localhost:35729/_lr/livereload.js?port=35729&host=localhost&path=_lr/livereload');
   });
 
+  it('liveReloadBaseURL including port is provided GH#68', assert => {
+    options.liveReloadBaseUrl = 'http://berus.com:4206';
+
+    let script = InjectLiveReload.dynamicScript(options);
+    let actual = getScriptSrc(script);
+
+    assert.strictEqual(actual, 'http://berus.com:4206/_lr/livereload.js?port=4206&host=berus.com');
+  });
+
   it('liveReloadPrefix is provided', assert => {
     options.liveReloadPrefix = 'other-lr-path';
     let script = InjectLiveReload.dynamicScript(options);
