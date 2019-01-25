@@ -21,6 +21,7 @@ The following options are supported via command line arguments or the `.ember-cl
 | `liveReload` | Defaults to `true` during `ember serve`. Set to `false` to prevent the livereload script tag from being injected. |
 | `liveReloadPort` | Specifies the port that `ember-cli-live-reload.js` and `livereload.js` are loaded from  |
 | `liveReloadHost` | The host that `ember-cli-live-reload.js` will be loaded from |
+| `liveReloadPrefix` | The url prefix which will be prepended before `livereload.js` |
 
 The following options are supported via the `.ember-cli` file:
 
