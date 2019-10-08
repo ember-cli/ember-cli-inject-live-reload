@@ -5,7 +5,7 @@ const it = QUnit.test;
 const express = require('express');
 const http = require('http');
 
-const InjectLiveReload = require('../index');
+const InjectLiveReload = require('../lib/index');
 process.env = {
   EMBER_CLI_INJECT_LIVE_RELOAD_BASEURL : 'test/',
   EMBER_CLI_INJECT_LIVE_RELOAD_PORT: 4200

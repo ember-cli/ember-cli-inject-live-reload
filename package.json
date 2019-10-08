@@ -16,9 +16,9 @@
   "license": "MIT",
   "author": "Robert Jackson",
   "files": [
-    "index.js"
+    "lib"
   ],
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "changelog": "lerna-changelog",
     "lint:js": "eslint .",
