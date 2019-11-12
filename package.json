@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-plugin-node": "^8",
+    "eslint-plugin-node": "^10",
     "express": "^4.17.1",
     "lerna-changelog": "^0.8.3",
     "qunit": "~2.9.3"
