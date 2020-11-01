@@ -33,7 +33,7 @@
     "eslint-plugin-node": "^8",
     "express": "^4.17.1",
     "lerna-changelog": "^0.8.3",
-    "qunit": "~2.10.1"
+    "qunit": "~2.11.3"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
