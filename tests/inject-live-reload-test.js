@@ -19,7 +19,13 @@ describe('contenFor returns', () => {
   it('nothing if type is not head', assert => {
     let scriptTag = InjectLiveReload.contentFor('body');
     assert.equal(scriptTag, undefined);
-  })
+  });
+  it('add attribute if @embroider/compat is present', assert => {
+    InjectLiveReload.hasEmbroider = true;
+    let scriptTag = InjectLiveReload.contentFor('head');
+    assert.equal(scriptTag, '<script src="test/ember-cli-live-reload.js" type="text/javascript" data-embroider-ignore="true"></script>');
+    InjectLiveReload.hasEmbroider = false;
+  });
 });
 
 describe('dynamicScript returns right script when', hooks => {
