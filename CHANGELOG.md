@@ -1,5 +1,13 @@
 # Change Log
 
+## v2.1.0 (2021-06-14)
+
+#### :rocket: Enhancement
+* [#175](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/175) Ensure the script tag we inject is ignored by Embroider ([@stefanpenner](https://github.com/stefanpenner))
+
+#### Committers: 1
+- Stefan Penner ([@stefanpenner](https://github.com/stefanpenner))
+
 ## v2.0.1 (2018-10-15)
 
 #### :bug: Bug Fix
