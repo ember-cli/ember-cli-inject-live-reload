@@ -14,7 +14,7 @@ process.env = {
 describe('contenFor returns', () => {
   it('right path for ember-cli-inject-live-reload.js', assert => {
     let scriptTag = InjectLiveReload.contentFor('head');
-    assert.equal(scriptTag, '<script src="test/ember-cli-live-reload.js" type="text/javascript"></script>');
+    assert.equal(scriptTag, '<script data-embroider-ignore src="test/ember-cli-live-reload.js" type="text/javascript"></script>');
   });
   it('nothing if type is not head', assert => {
     let scriptTag = InjectLiveReload.contentFor('body');
