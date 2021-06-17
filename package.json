@@ -5,9 +5,9 @@
   "keywords": [
     "ember-addon"
   ],
-  "homepage": "https://github.com/rwjblue/ember-cli-inject-live-reload",
+  "homepage": "https://github.com/ember-cli/ember-cli-inject-live-reload",
   "bugs": {
-    "url": "https://github.com/rwjblue/ember-cli-inject-live-reload/issues"
+    "url": "https://github.com/ember-cli/ember-cli-inject-live-reload/issues"
   },
   "repository": {
     "type": "git",
