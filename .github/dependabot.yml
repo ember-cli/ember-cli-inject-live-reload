@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "03:00"
+  open-pull-requests-limit: 10
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.16.0
+    - 7.19.0
+    - 7.21.0
+  - dependency-name: qunit
+    versions:
+    - 2.13.0
+    - 2.14.0
+  - dependency-name: ember-cli-version-checker
+    versions:
+    - 5.1.1
