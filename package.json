@@ -5,13 +5,13 @@
   "keywords": [
     "ember-addon"
   ],
-  "homepage": "https://github.com/rwjblue/ember-cli-inject-live-reload",
+  "homepage": "https://github.com/ember-cli/ember-cli-inject-live-reload",
   "bugs": {
-    "url": "https://github.com/rwjblue/ember-cli-inject-live-reload/issues"
+    "url": "https://github.com/ember-cli/ember-cli-inject-live-reload/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rwjblue/ember-cli-inject-live-reload.git"
+    "url": "git://github.com/ember-cli/ember-cli-inject-live-reload.git"
   },
   "license": "MIT",
   "author": "Robert Jackson",
