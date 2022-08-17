@@ -1,0 +1,13 @@
+{
+  "name": "ember-cli-inject-live-reload-tests",
+  "version": "2.1.0",
+  "private": true,
+  "scripts": {
+    "test": "qunit *-test.js"
+  },
+  "dependencies": {
+    "ember-cli-inject-live-reload": "2.1.0",
+    "express": "^4.17.1",
+    "qunit": "~2.10.1"
+  }
+}
