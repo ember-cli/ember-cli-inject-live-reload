@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "lib",
-    "tests"
+    "tests",
+    "test_apps/app_*"
   ],
   "scripts": {
     "changelog": "lerna-changelog",
@@ -11,9 +12,11 @@
     "test": "yarn workspace ember-cli-inject-live-reload-tests test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.25.1",
     "eslint": "^5.16.0",
     "eslint-plugin-node": "^8",
-    "lerna-changelog": "^0.8.3"
+    "lerna-changelog": "^0.8.3",
+    "wait-port": "^0.3.0"
   },
   "changelog": {
     "repo": "ember-cli/ember-cli-inject-live-reload",
