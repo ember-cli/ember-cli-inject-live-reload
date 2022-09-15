@@ -9,7 +9,7 @@
   "scripts": {
     "changelog": "lerna-changelog",
     "lint:js": "eslint .",
-    "test": "yarn workspace ember-cli-inject-live-reload-tests test"
+    "test": "playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.25.1",

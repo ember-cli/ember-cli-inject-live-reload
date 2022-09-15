@@ -1,5 +1,6 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
 import { devices } from "@playwright/test";
+import type { TestOptions } from "./e2e/test";
 
 /**
  * Read environment variables from file.
@@ -10,7 +11,9 @@ import { devices } from "@playwright/test";
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-const config: PlaywrightTestConfig = {
+const config: PlaywrightTestConfig<TestOptions> = {
+  globalSetup: "./reset",
+  globalTeardown: "./reset",
   testDir: "./e2e",
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
@@ -42,56 +45,28 @@ const config: PlaywrightTestConfig = {
     trace: "on-first-retry",
   },
 
-  /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
+      name: "Ember App (CLI 3.28) Chrome",
       use: {
+        appDir: "./test_apps/app_3_28",
         ...devices["Desktop Chrome"],
       },
     },
-
-    // {
-    //   name: 'firefox',
-    //   use: {
-    //     ...devices['Desktop Firefox'],
-    //   },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari'],
-    //   },
-    // },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: {
-    //     ...devices['Pixel 5'],
-    //   },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: {
-    //     ...devices['iPhone 12'],
-    //   },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: {
-    //     channel: 'msedge',
-    //   },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: {
-    //     channel: 'chrome',
-    //   },
-    // },
+    {
+      name: "Ember App (CLI 4.4) Chrome",
+      use: {
+        appDir: "./test_apps/app_4_4",
+        ...devices["Desktop Chrome"],
+      },
+    },
+    {
+      name: "Ember App (CLI latest) Chrome",
+      use: {
+        appDir: "./test_apps/app_latest",
+        ...devices["Desktop Chrome"],
+      },
+    },
   ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
