@@ -1,0 +1,51 @@
+{
+  "name": "app-latest",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Small description for app-latest goes here",
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build --environment=production",
+    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
+    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "start": "ember serve",
+    "test": "npm-run-all lint test:*",
+    "test:ember": "ember test"
+  },
+  "devDependencies": {
+    "@ember/optional-features": "^2.0.0",
+    "@ember/test-helpers": "^2.8.1",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "ember-auto-import": "^2.4.2",
+    "ember-cli": "~4.6.0",
+    "ember-cli-app-version": "^5.0.0",
+    "ember-cli-babel": "^7.26.11",
+    "ember-cli-dependency-checker": "^3.3.1",
+    "ember-cli-htmlbars": "^6.1.0",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-load-initializers": "^2.1.2",
+    "ember-resolver": "^8.0.3",
+    "ember-source": "~4.6.0",
+    "ember-welcome-page": "^6.2.0",
+    "loader.js": "^4.7.0",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^5.74.0"
+  },
+  "engines": {
+    "node": "14.* || >= 16"
+  },
+  "ember": {
+    "edition": "octane"
+  }
+}

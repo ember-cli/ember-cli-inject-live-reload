@@ -1,0 +1,47 @@
+{
+  "name": "app-3-28",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Small description for app-3-28 goes here",
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build --environment=production",
+    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
+    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "start": "ember serve",
+    "test": "npm-run-all lint test:*",
+    "test:ember": "ember test"
+  },
+  "devDependencies": {
+    "@ember/optional-features": "^2.0.0",
+    "ember-auto-import": "^1.11.3",
+    "ember-cli": "~3.28.4",
+    "ember-cli-app-version": "^5.0.0",
+    "ember-cli-babel": "^7.26.6",
+    "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-htmlbars": "^5.7.1",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-load-initializers": "^2.1.2",
+    "ember-resolver": "^8.0.2",
+    "ember-source": "~3.28.0",
+    "ember-welcome-page": "^4.0.0",
+    "loader.js": "^4.7.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": "12.* || 14.* || >= 16"
+  },
+  "ember": {
+    "edition": "octane"
+  }
+}
