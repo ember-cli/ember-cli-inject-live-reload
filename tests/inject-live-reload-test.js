@@ -156,6 +156,25 @@ describe("dynamicScript returns right script when", (hooks) => {
 
     assert.strictEqual(actual, "/_lr/livereload.js?port=4200&host=localhost");
   });
+
+  it('sets the proper port for http when served via domain', assert => {
+    location.port = '';
+
+    let script = InjectLiveReload.dynamicScript(options);
+    let actual = getScriptSrc(script);
+
+    assert.strictEqual(actual, '/_lr/livereload.js?port=80&host=localhost&path=_lr/livereload');
+  });
+
+  it('sets the proper port for http when served via domain', assert => {
+    location.port = '';
+    location.protocol = 'https:'
+
+    let script = InjectLiveReload.dynamicScript(options);
+    let actual = getScriptSrc(script);
+
+    assert.strictEqual(actual, '/_lr/livereload.js?port=443&host=localhost&path=_lr/livereload');
+  });
 });
 
 describe("serverMiddleware", (hooks) => {
@@ -196,7 +215,7 @@ describe("serverMiddleware", (hooks) => {
             `(function() {
   var srcUrl = null;
   var host = location.hostname || 'localhost';
-  var useCustomPort = false || location.port !== 4200;
+  var useCustomPort = false || (location.port !== '' && location.port !== 4200);
   var defaultPort = location.port || (location.protocol === 'https:' ? 443 : 80);
   var port = useCustomPort ? 4200 : defaultPort;
   var path = '';
