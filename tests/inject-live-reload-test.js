@@ -73,7 +73,6 @@ describe("dynamicScript returns right script when", (hooks) => {
     options = {
       port: 4200,
       liveReloadPort: 4200,
-      isLatestEmber: true,
       liveReloadPrefix: "_lr",
       liveReloadJsUrl: null,
       liveReloadOptions: null,
@@ -148,14 +147,6 @@ describe("dynamicScript returns right script when", (hooks) => {
       Object.assign({ snipver: 1 }, options.liveReloadOptions)
     );
   });
-
-  it("provide compatiblity for older ember version", (assert) => {
-    options.isLatestEmber = false;
-    let script = InjectLiveReload.dynamicScript(options);
-    let actual = getScriptSrc(script);
-
-    assert.strictEqual(actual, "/_lr/livereload.js?port=4200&host=localhost");
-  });
 });
 
 describe("serverMiddleware", (hooks) => {
@@ -169,7 +160,6 @@ describe("serverMiddleware", (hooks) => {
         rootURL: "/test/",
         liveReload: true,
         port: 4200,
-        isLatestEmber: false,
       },
     };
   });
